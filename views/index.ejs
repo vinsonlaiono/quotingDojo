@@ -30,9 +30,9 @@
         <form action="/users" method="post">
             <div class="form-group">
                 <label for="exampleFormControlInput1">User</label>
-                <input type="text" class="form-control" id="username" name="username" placeholder="Please enter a name...">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Please enter a name...">
                 <br>
-                <textarea type="number" class="form-control" name="quote" id="quote" placeholder="What would you like to say..."></textarea>
+                <textarea class="form-control" name="quote" id="quote" placeholder="What would you like to say..."></textarea>
                 <br>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
@@ -40,7 +40,7 @@
         <a href="/deleteAll" class="btn btn-danger">Delete All</a>
         <br>
         <br>
-        <!-- <div class="container form-control table-responsive">
+        <div class="container form-control table-responsive">
 
             <table class="table table-striped ">
                 <thead>
@@ -68,7 +68,7 @@
                         <% } %>
                 </tbody>
             </table>
-        </div> -->
+        </div>
     </div>
 </body>
 

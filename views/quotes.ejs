@@ -21,16 +21,21 @@
     <div class="container">
         <h1>Here are the awesome quotes</h1>
         <div class="container form-control table-responsive">
+            <ul>
             <% for (var x in users) { %>
-                "
-                <%= users[x].quote%>"
+
+                    <h5 class="blockquote">
+                        
+                        "<%= users[x].quote%>"
+                    </h5>
                     <ul>
-                        <p>-
+                        <p class="blockquote-footer text-capitalize">
                             <%= users[x].name%>
-                                <%= users[x].created_at %>
+                            <%= users[x].created_at %>
                         </p>
                     </ul>
                     <% } %>
+                </ul>
         </div>
         <br>
         <a href="/" class="btn btn-success">Form</a>
