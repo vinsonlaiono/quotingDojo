@@ -4,19 +4,19 @@ module.exports = function (app) {
     // All routes go here
 
     //renders the root route page
-    app.get('/', function (req, res) {
+    app.get('/', (req, res) => {
         quotes.index(req, res);
     })
     // renders the show quotes page
-    app.get('/showQuotes', function(req, res){
+    app.get('/showQuotes', (req, res) =>{
         quotes.showQuotes(req, res);
     })
     // deletes all data
-    app.get('/deleteAll', function (req, res) {
+    app.get('/deleteAll', (req, res) => {
         quotes.deleteAll(req, res);
     })
     // Add Quotes Request 
-    app.post('/users', function (req, res) {
+    app.post('/users', (req, res) => {
         quotes.users(req, res)
     })
 

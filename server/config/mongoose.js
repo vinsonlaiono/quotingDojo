@@ -1,6 +1,7 @@
-var fs = require('fs');
-var path = require('path');
-var models_path = path.join(__dirname, './../models')
+var fs = require('fs'),
+    path = require('path'),
+    models_path = path.join(__dirname, './../models')
+    
 fs.readdirSync(models_path).forEach(function (file) {
     if (file.indexOf('.js') >= 0) {
         // require the file (this runs the model file which registers the schema)

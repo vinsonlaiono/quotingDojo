@@ -2,14 +2,13 @@ const mongoose = require('mongoose');
 const User = mongoose.model('User');
 
 const quotes = {
-    index: function(req, res){
-        User.find({}, function (err, users) {
+    index: (req, res) =>{
+        User.find({}, (err, users) => {
             if (err) {
                 console.log(err)
                 res.redirect('/')
-                
             } else {
-                var allUsers = [];
+                let allUsers = [];
                 for (i = 0; i < users.length; i++) {
                     allUsers.push(users[i]);
                 }
@@ -21,12 +20,12 @@ const quotes = {
         })
         // res.render('index')
     },
-    users: function (req, res) {
+    users: (req, res) => {
         console.log("POST DATA", req.body);
         // create a new Quote with the name and age corresponding to those from req.body
         var user = new User({ name: req.body.name, quote: req.body.quote, created_at: new Date() });
         // Try to save that new  quote to the database (this is the method that actually inserts into the db) and run a callback function with an error (if any) from the operation.
-        user.save(function (err) {
+        user.save((err) => {
             // if there is an error console.log that something went wrong!
             if (err) {
                 console.log('something went wrong', err);
@@ -40,14 +39,13 @@ const quotes = {
             }
         })
     },
-    showQuotes: function(req, res){
-        User.find({}, function (err, users) {
+    showQuotes: (req, res) =>{
+        User.find({}, (err, users) => {
             if (err) {
                 console.log(err)
                 res.redirect('/')
-                
             } else {
-                var allUsers = [];
+                let allUsers = [];
                 for (i = 0; i < users.length; i++) {
                     allUsers.push(users[i]);
                 }
@@ -59,10 +57,8 @@ const quotes = {
         })
         // res.render('index')
     },
-    deleteAll: function(req, res){
-        User.remove({}, function (err) {
-            res.redirect('/')
-        })
+    deleteAll: (req, res) => {
+        User.remove({}, (err) => res.redirect('/'));
     }
 }
 
